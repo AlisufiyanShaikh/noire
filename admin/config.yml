@@ -2,20 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "uploads"
+public_folder: "/uploads"
 
 collections:
-  - name: "instagram"
-    label: "Instagram Posts"
-    folder: "content/instagram"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Caption", name: "caption", widget: "text" }
-
   - name: "quotes"
     label: "Quotes"
     folder: "content/quotes"
@@ -24,3 +14,12 @@ collections:
     fields:
       - { label: "Quote", name: "quote", widget: "text" }
       - { label: "Author", name: "author", widget: "string" }
+
+  - name: "instagram"
+    label: "Instagram"
+    folder: "content/instagram"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Embed Code", name: "body", widget: "markdown" }
