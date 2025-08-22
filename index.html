@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOIRÉ – Digital Content Hub</title>
     <meta name="description" content="NOIRÉ – Centralized platform for managing and showcasing digital content across all platforms.">
-    <meta name="keywords" content="digital content, social media, portfolio, creator hub">
+    <meta name="keywords" content="digital content, social media, portfolio, creator hub, Ali Sufiyan Shaikh">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://your-domain.com/">
-    <meta property="og:title" content="NOIRÉ – Digital Content Hub">
-    <meta property="og:description" content="Where your content lives — curated, controlled, commanding.">
+    <meta property="og:url" content="https://preeminent-meerkat-8c9e9e.netlify.app/">
+    <meta property="og:title" content="NOIRÉ – Ali Sufiyan Shaikh's Digital Hub">
+    <meta property="og:description" content="Where content lives — curated, controlled, commanding.">
     <meta property="og:image" content="https://your-domain.com/assets/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://your-domain.com/">
-    <meta property="twitter:title" content="NOIRÉ – Digital Content Hub">
-    <meta property="twitter:description" content="Where your content lives — curated, controlled, commanding.">
+    <meta property="twitter:url" content="https://preeminent-meerkat-8c9e9e.netlify.app/">
+    <meta property="twitter:title" content="NOIRÉ – Ali Sufiyan Shaikh's Digital Hub">
+    <meta property="twitter:description" content="Where content lives — curated, controlled, commanding.">
     <meta property="twitter:image" content="https://your-domain.com/assets/twitter-image.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,62 +32,39 @@
             --gradient-end: #000000;
         }
         
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
+        html { scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%); }
+        .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        
-        .loading-skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-        }
-        
+        .social-icon { transition: all 0.3s ease; }
         .social-icon:hover {
             color: var(--accent);
             transform: scale(1.1);
         }
-        
-        .error-fallback {
-            border: 2px dashed #e2e8f0;
-            background: #f8fafc;
+        .reel-overlay::after {
+            content: '▶';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
         }
-        
-        @media (max-width: 768px) {
-            .hero-text {
-                font-size: 3rem;
-            }
+        .group:hover .reel-overlay::after {
+            transform: scale(1.1);
         }
-        
-        .lazy-image {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .lazy-image.loaded {
-            opacity: 1;
-        }
+
+        @media (max-width: 768px) { .hero-text { font-size: 3rem; } }
     </style>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
@@ -107,6 +84,12 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="#quotes" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Quotes</a>
+                <a href="#social" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Social</a>
+                <a href="#products" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Products</a>
             </div>
         </div>
     </nav>
@@ -130,8 +113,6 @@
                 </a>
             </div>
         </div>
-        
-        <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -143,18 +124,13 @@
     <section class="py-20 bg-gray-50" id="quotes">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up">
-                    Inspiration
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    Thoughts that shape perspectives and drive innovation.
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up">Inspiration</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Thoughts that shape perspectives and drive innovation.</p>
             </div>
             <div id="quotes-feed" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Loading skeletons -->
-                <div class="loading-skeleton h-48 rounded-xl"></div>
-                <div class="loading-skeleton h-48 rounded-xl"></div>
-                <div class="loading-skeleton h-48 rounded-xl"></div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover" data-aos="fade-up"><blockquote class="text-lg"><p>"The only way to do great work is to love what you do."</p><cite class="block text-right mt-4 not-italic text-gray-600">- Steve Jobs</cite></blockquote></div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100"><blockquote class="text-lg"><p>"Innovation distinguishes between a leader and a follower."</p><cite class="block text-right mt-4 not-italic text-gray-600">- Steve Jobs</cite></blockquote></div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200"><blockquote class="text-lg"><p>"Strive not to be a success, but rather to be of value."</p><cite class="block text-right mt-4 not-italic text-gray-600">- Albert Einstein</cite></blockquote></div>
             </div>
         </div>
     </section>
@@ -163,50 +139,53 @@
     <section class="py-20 bg-white" id="social">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up">
-                    Social Presence
-                </h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    Stay connected across all platforms where creativity meets community.
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4" data-aos="fade-up">Social Presence</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Stay connected across all platforms where creativity meets community.</p>
             </div>
             
-            <!-- Instagram -->
+            <!-- Instagram Section -->
             <div class="mb-16">
-                <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Instagram</h3>
-                <div id="instagram-feed" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="loading-skeleton h-64 rounded-xl"></div>
-                    <div class="loading-skeleton h-64 rounded-xl"></div>
-                    <div class="loading-skeleton h-64 rounded-xl"></div>
+                <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Instagram Posts & Reels</h3>
+                <div id="instagram-feed" class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                     <a href="https://www.instagram.com/p/DIn3QcPp7V2/" target="_blank" class="block rounded-xl overflow-hidden shadow-lg card-hover group relative" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1554188248-986adbb73371?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Instagram Post" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </a>
+                     <a href="https://www.instagram.com/p/DH33qU-TtB3/" target="_blank" class="block rounded-xl overflow-hidden shadow-lg card-hover group relative" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Instagram Post" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </a>
+                     <a href="https://www.instagram.com/p/DKAMlOUJ7jS/" target="_blank" class="block rounded-xl overflow-hidden shadow-lg card-hover group relative" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Instagram Post" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+                    </a>
+                    <a href="https://www.instagram.com/reel/DIDj-yOJo1p/" target="_blank" class="block rounded-xl overflow-hidden shadow-lg card-hover group relative" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1516962322815-0a9f5d168542?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=800" alt="Instagram Reel" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="reel-overlay"></div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- YouTube Section -->
+            <div class="mb-16">
+                 <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Featured Video</h3>
+                 <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                    <a href="https://youtu.be/B_wwMAeCPqM" target="_blank" class="block rounded-xl overflow-hidden shadow-lg card-hover group relative">
+                        <img src="https://img.youtube.com/vi/B_wwMAeCPqM/maxresdefault.jpg" alt="YouTube Video Thumbnail" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
+                    </a>
+                 </div>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Latest Thoughts (X/Twitter)</h3>
+                <div id="twitter-feed" class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <a href="https://x.com/alisufiyanshaxx" target="_blank" class="block bg-gray-50 p-6 rounded-xl card-hover" data-aos="fade-up"><p class="text-gray-700">Exploring new design trends and how they intersect with user experience. It's fascinating to see how aesthetics can drive usability.</p><div class="text-sm text-gray-500 mt-4">View on X</div></a>
+                    <a href="https://x.com/alisufiyanshaxx" target="_blank" class="block bg-gray-50 p-6 rounded-xl card-hover" data-aos="fade-up" data-aos-delay="100"><p class="text-gray-700">Just pushed a new project to GitHub! It’s a small utility to streamline front-end workflows. Check it out and let me know your thoughts.</p><div class="text-sm text-gray-500 mt-4">View on X</div></a>
                 </div>
             </div>
             
-            <!-- Twitter -->
-            <div class="mb-16">
-                <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up">Latest Thoughts</h3>
-                <div id="twitter-feed" class="grid md:grid-cols-2 gap-6">
-                    <div class="loading-skeleton h-48 rounded-xl"></div>
-                    <div class="loading-skeleton h-48 rounded-xl"></div>
-                </div>
-            </div>
-            
-            <!-- Other Platforms -->
-            <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
-                <a href="#" class="block p-8 bg-gray-50 rounded-xl text-center card-hover">
-                    <div class="text-4xl mb-4">🎥</div>
-                    <h4 class="text-xl font-semibold mb-2">YouTube</h4>
-                    <p class="text-gray-600">Video content and tutorials</p>
-                </a>
-                <a href="#" class="block p-8 bg-gray-50 rounded-xl text-center card-hover">
-                    <div class="text-4xl mb-4">💻</div>
-                    <h4 class="text-xl font-semibold mb-2">GitHub</h4>
-                    <p class="text-gray-600">Open source projects</p>
-                </a>
-                <a href="#" class="block p-8 bg-gray-50 rounded-xl text-center card-hover">
-                    <div class="text-4xl mb-4">✍️</div>
-                    <h4 class="text-xl font-semibold mb-2">Medium</h4>
-                    <p class="text-gray-600">In-depth articles</p>
-                </a>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up">
+                <a href="https://www.youtube.com/@alisufiyanshaxx" target="_blank" class="block p-8 bg-gray-50 rounded-xl text-center card-hover"><div class="text-4xl mb-4">🎥</div><h4 class="text-xl font-semibold mb-2">YouTube</h4><p class="text-gray-600">Video content and tutorials</p></a>
+                <a href="https://github.com/alisufiyanshaikh" target="_blank" class="block p-8 bg-gray-50 rounded-xl text-center card-hover"><div class="text-4xl mb-4">💻</div><h4 class="text-xl font-semibold mb-2">GitHub</h4><p class="text-gray-600">Open source projects</p></a>
+                <a href="https://alisufiyanshaikh.medium.com/" target="_blank" class="block p-8 bg-gray-50 rounded-xl text-center card-hover"><div class="text-4xl mb-4">✍️</div><h4 class="text-xl font-semibold mb-2">Medium</h4><p class="text-gray-600">In-depth articles</p></a>
+                <a href="https://www.threads.net/@alisufiyanshaxx" target="_blank" class="block p-8 bg-gray-50 rounded-xl text-center card-hover"><div class="text-4xl mb-4">@</div><h4 class="text-xl font-semibold mb-2">Threads</h4><p class="text-gray-600">Updates and conversations</p></a>
             </div>
         </div>
     </section>
@@ -215,17 +194,13 @@
     <section class="py-20 bg-gray-900 text-white" id="products">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
-                    Products
-                </h2>
-                <p class="text-xl text-gray-300 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                    Curated selection of premium offerings and exclusive releases.
-                </p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">Products</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Curated selection of premium offerings and exclusive releases.</p>
             </div>
             <div id="products-feed" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="loading-skeleton h-80 rounded-xl"></div>
-                <div class="loading-skeleton h-80 rounded-xl"></div>
-                <div class="loading-skeleton h-80 rounded-xl"></div>
+                <div class="bg-gray-800 rounded-xl overflow-hidden card-hover" data-aos="fade-up"><img src="https://images.unsplash.com/photo-1546435770-a3e426bf4022?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Product Placeholder" class="w-full h-60 object-cover"><div class="p-6"><h4 class="text-xl font-bold mb-2">Digital Toolkit Vol. 1</h4><p class="text-gray-400">A collection of essential assets for modern creators.</p></div></div>
+                <div class="bg-gray-800 rounded-xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100"><img src="https://images.unsplash.com/photo-1520186036988-3759a2a3224b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Product Placeholder" class="w-full h-60 object-cover"><div class="p-6"><h4 class="text-xl font-bold mb-2">Exclusive LUTs Pack</h4><p class="text-gray-400">Professional color grading presets for your videos.</p></div></div>
+                <div class="bg-gray-800 rounded-xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600" alt="Product Placeholder" class="w-full h-60 object-cover"><div class="p-6"><h4 class="text-xl font-bold mb-2">Creator Workshop</h4><p class="text-gray-400">An online course on building a personal brand.</p></div></div>
             </div>
         </div>
     </section>
@@ -236,49 +211,31 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="md:col-span-2">
                     <h3 class="text-2xl font-bold mb-4">NOIRÉ</h3>
-                    <p class="text-gray-400 mb-6 max-w-md">
-                        Your centralized hub for digital content across all platforms. 
-                        Where creativity meets curation.
-                    </p>
+                    <p class="text-gray-400 mb-6 max-w-md">Your centralized hub for digital content across all platforms. Where creativity meets curation.</p>
                     <div class="flex space-x-6">
-                        <a href="#" class="social-icon text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.219-5.175 1.219-5.175s-.31-.62-.31-1.538c0-1.441.834-2.515 1.871-2.515.883 0 1.309.662 1.309 1.456 0 .887-.565 2.212-.854 3.442-.243 1.027.515 1.871 1.531 1.871 1.84 0 3.065-2.371 3.065-5.176 0-2.135-1.44-3.744-4.037-3.744-2.967 0-4.8 2.135-4.8 4.508 0 .82.23 1.394.618 1.842.203.247.226.347.154.633-.052.202-.17.677-.219.865-.074.282-.301.384-.695.234-1.926-.806-2.821-2.967-2.821-5.384 0-3.916 2.967-8.628 8.854-8.628 4.747 0 7.835 3.124 7.835 6.498 0 4.456-2.72 7.806-6.723 7.806-1.354 0-2.636-.756-3.065-1.616l-.889 3.542c-.314 1.202-1.156 2.712-1.728 3.628 1.3.398 2.67.612 4.092.612 6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-icon text-gray-400 hover:text-white transition-colors">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
+                        <a href="https://x.com/alisufiyanshaxx" target="_blank" class="social-icon text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://www.pinterest.com/alisufiyanshaxx" target="_blank" class="social-icon text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.219-5.175 1.219-5.175s-.31-.62-.31-1.538c0-1.441.834-2.515 1.871-2.515.883 0 1.309.662 1.309 1.456 0 .887-.565 2.212-.854 3.442-.243 1.027.515 1.871 1.531 1.871 1.84 0 3.065-2.371 3.065-5.176 0-2.135-1.44-3.744-4.037-3.744-2.967 0-4.8 2.135-4.8 4.508 0 .82.23 1.394.618 1.842.203.247.226.347.154.633-.052.202-.17.677-.219.865-.074.282-.301.384-.695.234-1.926-.806-2.821-2.967-2.821-5.384 0-3.916 2.967-8.628 8.854-8.628 4.747 0 7.835 3.124 7.835 6.498 0 4.456-2.72 7.806-6.723 7.806-1.354 0-2.636-.756-3.065-1.616l-.889 3.542c-.314 1.202-1.156 2.712-1.728 3.628 1.3.398 2.67.612 4.092.612 6.624 0 11.99-5.367 11.99-11.987C24.007 5.367 18.641.001 12.017.001z"/></svg></a>
+                        <a href="https://www.linkedin.com/in/alisufiyanshaikh" target="_blank" class="social-icon text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
                     </div>
                 </div>
-                
                 <div>
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#quotes" class="text-gray-400 hover:text-white transition-colors">Quotes</a></li>
-                        <li><a href="#social" class="text-gray-400 hover:text-white transition-colors">Social</a></li>
-                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                        <li><a href="#quotes" class="text-gray-400 hover:text-white">Quotes</a></li>
+                        <li><a href="#social" class="text-gray-400 hover:text-white">Social</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white">Products</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h4 class="font-semibold mb-4">Connect</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">YouTube</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="https://instagram.com/alisufiyanshaxx" target="_blank" class="text-gray-400 hover:text-white">Instagram</a></li>
+                        <li><a href="https://x.com/alisufiyanshaxx" target="_blank" class="text-gray-400 hover:text-white">X / Twitter</a></li>
+                        <li><a href="https://www.youtube.com/@alisufiyanshaxx" target="_blank" class="text-gray-400 hover:text-white">YouTube</a></li>
+                        <li><a href="https://github.com/alisufiyanshaikh" target="_blank" class="text-gray-400 hover:text-white">GitHub</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
                 <p class="text-gray-400">© 2025 NOIRÉ. All rights reserved.</p>
             </div>
@@ -287,8 +244,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
-    
     <script>
         // Initialize AOS
         AOS.init({
@@ -297,112 +252,6 @@
             offset: 100
         });
 
-        // Content management system
-        class ContentManager {
-            constructor() {
-                this.converter = new showdown.Converter();
-                this.init();
-            }
-
-            async init() {
-                try {
-                    await Promise.all([
-                        this.loadQuotes(),
-                        this.loadInstagram(),
-                        this.loadTwitter(),
-                        this.loadProducts()
-                    ]);
-                } catch (error) {
-                    console.error('Content loading failed:', error);
-                }
-            }
-
-            async fetchContent(url) {
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    return await response.text();
-                } catch (error) {
-                    console.error(`Error loading ${url}:`, error);
-                    return null;
-                }
-            }
-
-            async fetchJSON(url) {
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    return await response.json();
-                } catch (error) {
-                    console.error(`Error loading ${url}:`, error);
-                    return null;
-                }
-            }
-
-            createFallbackContent(container, type) {
-                container.innerHTML = '';
-                const fallback = document.createElement('div');
-                fallback.className = 'error-fallback p-8 rounded-xl text-center';
-                
-                const messages = {
-                    quotes: { icon: '💭', text: 'Inspirational quotes coming soon...' },
-                    instagram: { icon: '📸', text: 'Instagram feed will appear here...' },
-                    twitter: { icon: '🐦', text: 'Latest tweets loading...' },
-                    products: { icon: '🛍️', text: 'Exciting products coming soon...' }
-                };
-                
-                const msg = messages[type] || { icon: '⚡', text: 'Content loading...' };
-                fallback.innerHTML = `
-                    <div class="text-4xl mb-4">${msg.icon}</div>
-                    <p class="text-gray-600">${msg.text}</p>
-                `;
-                container.appendChild(fallback);
-            }
-
-            async loadQuotes() {
-                const container = document.getElementById('quotes-feed');
-                const quotePaths = [
-                    'content/quotes/quote1.md',
-                    'content/quotes/quote2.md',
-                    'content/quotes/quote3.md'
-                ];
-                
-                let hasContent = false;
-                container.innerHTML = '';
-
-                for (const path of quotePaths) {
-                    const content = await this.fetchContent(path);
-                    if (content) {
-                        hasContent = true;
-                        const html = this.converter.makeHtml(content);
-                        const card = document.createElement('div');
-                        card.className = 'bg-white p-8 rounded-xl shadow-lg card-hover';
-                        card.innerHTML = html;
-                        card.setAttribute('data-aos', 'fade-up');
-                        container.appendChild(card);
-                    }
-                }
-
-                if (!hasContent) {
-                    this.createFallbackContent(container, 'quotes');
-                }
-            }
-
-            async loadInstagram() {
-                const container = document.getElementById('instagram-feed');
-                const instagramPaths = [
-                    'content/social/instagram/post1.md',
-                    'content/social/instagram/post2.md',
-                    'content/social/instagram/post3.md'
-                ];
-                
-                let hasContent = false;
-                container.innerHTML = '';
-
-                for (const path of instagramPaths) {
-                    const content = await this.fetchContent(path);
-                    if (content) {
-                        hasContent = true;
-                        const html = this.converter.makeHtml(content);
-                        const card = document.createElement('div');
-                        card.className = 'bg-grad
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = do
